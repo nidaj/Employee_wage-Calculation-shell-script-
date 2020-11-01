@@ -23,6 +23,10 @@ getAttendance()
         attend=$((RANDOM%3))
 }
 
+getTotalWage()
+{
+        sum=$(($sum+$1))
+}
 echo "Day No        Wage        Total Wage"
 for (( d=1; d<=20; d++ ))
 do
@@ -30,18 +34,22 @@ do
         case "$attend" in
                 "1")
                 getWage 1
-                sum=$(( $sum + $wage ))
+                #sum=$(( $sum + $wage ))
+                getTotalWage $wage
                 echo "Day $d         "$wage"        "$sum
                 ;;
                 "2")
                 getWage 2
-                sum=$(( $sum + $wage ))
+                getTotalWage $wage
+                #sum=$(( $sum + $wage ))
                 echo "Day $d         "$wage"         "$sum
                 ;;
                 *)
                 getWage 0
-                sum=$(( $sum + $wage ))
+                getTotalWage $wage
+                #sum=$(( $sum + $wage ))
                 echo "Day $d         "$wage"          "$sum
                 ;;
         esac
 done
+
