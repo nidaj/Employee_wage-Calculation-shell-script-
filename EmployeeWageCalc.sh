@@ -1,11 +1,16 @@
-#! /bin/bash
-echo "Welcome To Employee Wage Computation Program on Master Branch"
-attendance=$((RANDOM%2))
-if (( $attendance == 1 ))
-then
-        echo "Employee is Present"
-else
-        echo "Employee is Absent"
-fi
+#!/bin/bash
+echo "Welcome to Employee Wage Computation Program"
 
+attend=$((RANDOM%2))
+full_wage=160
+no_wage=0
+
+if (( $attend == 0 ))
+then
+        echo "Day No:" "Wage"
+        echo "Day 1  "  $full_wage
+else
+        echo "Day No:" "Wage"
+        echo "Day 1  "  $no_wage
+fi
 
